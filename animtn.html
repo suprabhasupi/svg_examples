@@ -2,18 +2,50 @@
 <html>
 <head>
 <link rel="stylesheet" href="animtn.css" />
-
 	<title>first animtn</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+
+    <script type="text/javascript" src="js/ScrollMagic.js"></script>
+    <script type="text/javascript" src="js/TweenMax.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ScrollMagic.js"></script>
+     <script type="text/javascript" src="js/velocity.min.js"></script>
+    <script type="text/javascript" src="js/animation.gsap.min.js"></script>
+    <script type="text/javascript" src="js/animation.velocity.js"></script>
+    <script type="text/javascript" src="js/debug.addIndicators.js"></script>
+        
+
 </head>
+
 <body>
+<div id="RR"></div>
 <p class="us">KUMBHA-KARAN</p>
 <img src="image/image1.jpg" class="img1">
 <img src="image/image2.jpg" class="img2">
 <img src="image/image3.jpg" class="img3">
+<div class="animate"></div>
 <img src="image/image4.jpg" class="img4">
 <img src="image/image5.jpg" class="img5">
 <!-- <img src="image/image6.jpg" class="img6"> -->
 <!-- <img src="image/image7.jpg" class="img7"> -->
 <!-- <img src="image/image8.jpg" class="img8"> -->
+
+<p id = "animate">spppp</p>
+
 </body>
+
+<script>
+	var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+        triggerHook: "0.05"
+        // duration: "80%" seans k s
+    }
+});
+
+	// build scene
+	var scene = new ScrollMagic.Scene({triggerElement: "#RR"})
+					// trigger a velocity opaticy animation
+					.setVelocity("#animate", {opacity: 0}, {duration: 400})
+					.addIndicators() // add indicators (requires plugin)
+					.addTo(controller);
+</script>
 </html>
