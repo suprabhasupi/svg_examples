@@ -13,36 +13,27 @@
     <script type="text/javascript" src="js/jquery2.js"></script>
     <script type="text/javascript" src="js/npm.js"></script>
 
-	<title>first animtn</title>
+	<title>scollmagic_test</title>
 </head>
 <body>
-<div class="ss">
-<p class="us">KUMBHA-KARAN</p>
+<div class="spacer s2"></div>
+<div id="trigger" class="spacer s0">
+	<p>ssss</p>
 </div>
-<div class="nam">
-<img src="image/image1.jpg" class="img1">
-<img src="image/image2.jpg" class="img2">
-<img src="image/image3.jpg" class="img3">
-<img src="image/image4.jpg" class="img4">
-<img src="image/image5.jpg" class="img5">
+<div id="animate" class="box1 blue">
+	<p>hello</p>
 </div>
-<!-- <img src="image/image6.jpg" class="img6"> -->
-<!-- <img src="image/image7.jpg" class="img7"> -->
-<!-- <img src="image/image8.jpg" class="img8"> -->
-<div class="last">
-<img src="image/image6.jpg" class="img8">
-</div>
+<div class="spacer s2"></div>
 <script>
 	// init controller
 	var controller = new ScrollMagic.Controller();
 
 	// build scene
-	var scene = new ScrollMagic.Scene({triggerElement: ".ss"})
+	var scene = new ScrollMagic.Scene({triggerElement: "#trigger"})
 					// trigger a velocity opaticy animation
-					.setVelocity(".nam", {opacity: 0}, {duration: 10})
+					.setVelocity("#animate", {opacity: 0}, {duration: 400})
 					.addIndicators() // add indicators (requires plugin)
 					.addTo(controller);
 </script>
-
 </body>
 </html>

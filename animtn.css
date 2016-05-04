@@ -280,3 +280,9 @@ img.img5{
     opacity: 1;
   }
 }
+
+
+.name{
+      position: relative;
+    top: 5em;
+}
