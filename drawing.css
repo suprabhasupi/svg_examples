@@ -1,0 +1,192 @@
+/*styles for Animation svg*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Global */
+html, body { height: 100%; }
+
+svg { 
+  width: 100%;
+  height: 100%; 
+}
+
+
+.wrapper {
+	background-color: #f2f2f2;
+	width: 960px;
+ 	height: 80%;
+ 	padding: 20px;
+	margin: 20px auto;
+	position: relative; 
+}
+
+/*PACKMAN*/
+
+.wrap-packman .svg-packman { 
+  width: 300px; 
+  display: inline-block; 
+  vertical-align: top; 
+  box-sizing: border-box; 
+  padding: 20px;
+  position: relative;
+
+  animation:packglide 5s infinite;
+  animation-timing-function: ease-in-out;
+
+  -webkit-animation:packglide 6s infinite;
+  -webkit-animation-timing-function: ease-in-out;  
+}
+
+.svg-packman .shade {
+	fill: hsl(4,66%,53%);
+	animation: shadeglow 6s ease-in-out 0 infinite alternate;
+	-webkit-animation: shadeglow 6s ease-in-out 0 infinite alternate;
+}
+
+.svg-packman .body {
+	fill: hsl(4, 66%, 59%);
+	animation: glow 6s ease-in-out 0 infinite alternate;
+	-webkit-animation: glow 6s ease-in-out 0 infinite alternate;
+}
+
+
+.svg-packman .eyewhite {
+	fill: hsl(4, 0%, 100%);
+}
+
+.svg-packman .eye {
+	fill: hsl(200, 45%, 30%);
+
+	-webkit-animation-name: blink;
+	-webkit-animation-duration: 5s;
+	-webkit-animation-iteration-count: infinite; 
+	-webkit-transform-origin:50% 50%;
+
+	animation-name: blink;
+	animation-duration: 5s;
+	animation-iteration-count: infinite; 
+}
+
+
+/*PACKMAN ANIMATION*/
+
+@keyframes packglide {
+0%   {top:0px; left:0px; }
+25%  {top:0px; left:150px; }
+50%  {top:100px; left:150px; }
+75%  {top:100px; left:0px; }
+100% {top:0px; left:0px; }
+}
+
+@-webkit-keyframes packglide /* Safari and Chrome */
+{
+0%   {top:0px; left:0px; }
+25%  {top:0px; left:150px; }
+50%  {top:100px; left:150px; }
+75%  {top:100px; left:0px; }
+100% {top:0px; left:0px; }
+}
+
+
+@keyframes glow {
+	0% {fill: hsl(4, 66%, 59%);}
+	25% {fill: hsl(319, 50%, 50%);}
+	50% {fill: hsl(217, 50%, 50%);}
+	75% {fill: hsl(20, 60%, 54%);}
+	100% {fill: hsl(4, 66%, 59%);}
+}
+
+@-webkit-keyframes glow {
+	0% {fill: hsl(4, 66%, 59%);}
+	25% {fill: hsl(319, 50%, 50%);}
+	50% {fill: hsl(217, 50%, 50%);}
+	75% {fill: hsl(20, 60%, 54%);}
+	100% {fill: hsl(4, 66%, 59%);}
+}
+
+
+@keyframes shadeglow {
+	0% {fill: hsl(4, 66%, 49%);}
+	25% {fill: hsl(319, 50%, 40%);}
+	50% {fill: hsl(217, 50%, 40%);}
+	75% {fill: hsl(20, 60%, 44%);}
+	100% {fill: hsl(4, 66%, 49%);}
+}
+
+@-webkit-keyframes shadeglow {
+	0% {fill: hsl(4, 66%, 49%);}
+	25% {fill: hsl(319, 50%, 40%);}
+	50% {fill: hsl(217, 50%, 40%);}
+	75% {fill: hsl(20, 60%, 44%);}
+	100% {fill: hsl(4, 66%, 49%);}
+}
+
+@-webkit-keyframes blink { 
+	0% { -webkit-transform: scaleX(1) scaleY(1); } 
+	1% { -webkit-transform: scaleX(1.1) scaleY(0.1); } 
+	2% { -webkit-transform: scaleX(1) scaleY(1); }
+	24% { -webkit-transform: scaleX(1) scaleY(1); }
+	25% { -webkit-transform: scaleX(1.1) scaleY(0.1); } 
+	26% { -webkit-transform: scaleX(1) scaleY(1); }
+	50% { -webkit-transform: scaleX(1) scaleY(1); }
+	74% { -webkit-transform: scaleX(1) scaleY(1); }
+	75% { -webkit-transform: scaleX(1.1) scaleY(0.1); } 
+	76% { -webkit-transform: scaleX(1) scaleY(1); }
+	100% { -webkit-transform: scaleX(1) scaleY(1);} 
+}
+
+@-keyframes blink { 
+	0% { -webkit-transform: scaleX(1) scaleY(1); } 
+	1% { -webkit-transform: scaleX(1.1) scaleY(0.1); } 
+	2% { -webkit-transform: scaleX(1) scaleY(1); }
+	24% { -webkit-transform: scaleX(1) scaleY(1); }
+	25% { -webkit-transform: scaleX(1.1) scaleY(0.1); } 
+	26% { -webkit-transform: scaleX(1) scaleY(1); }
+	50% { -webkit-transform: scaleX(1) scaleY(1); }
+	74% { -webkit-transform: scaleX(1) scaleY(1); }
+	75% { -webkit-transform: scaleX(1.1) scaleY(0.1); } 
+	76% { -webkit-transform: scaleX(1) scaleY(1); }
+	100% { -webkit-transform: scaleX(1) scaleY(1);} 
+}
