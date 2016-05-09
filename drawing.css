@@ -104,7 +104,7 @@ svg {
 	-webkit-animation-iteration-count: infinite; 
 	-webkit-transform-origin:50% 50%;
 
-	animation-name: blink;
+	animation-name: blink 5s infinite;
 	animation-duration: 5s;
 	animation-iteration-count: infinite; 
 }
