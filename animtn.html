@@ -12,7 +12,8 @@
     <script type="text/javascript" src="js/animation.gsap.min.js"></script>
     <script type="text/javascript" src="js/animation.velocity.js"></script>
     <script type="text/javascript" src="js/debug.addIndicators.js"></script>
-        
+    <script type="text/javascript" src="js/jquery.flip.min.js"></script>
+       
 
 </head>
 
@@ -20,32 +21,72 @@
 <div id="RR"></div>
 <p class="us">KUMBHA-KARAN</p>
 <img src="image/image1.jpg" class="img1">
+
+<!-- <img src="image/emoji1.jpg" class="emoji1 center-block" style="width: 15%; hei"> -->
+
 <img src="image/image2.jpg" class="img2">
 <img src="image/image3.jpg" class="img3">
 <div class="animate"></div>
 <img src="image/image4.jpg" class="img4">
 <img src="image/image5.jpg" class="img5">
 <!-- <img src="image/image6.jpg" class="img6"> -->
-<!-- <img src="image/image7.jpg" class="img7"> -->
-<!-- <img src="image/image8.jpg" class="img8"> -->
 
-<p id = "animate">spppp</p>
+<div class="flip1"> 
+    <div class="front"> 
+         <img src="image/emoji2.png" class="emoji2" style="width: 50%">
+    </div> 
+    <div class="back">
+       <img src="image/emoji1.jpg" class="emoji1" style="width: 50%">
+    </div> 
+</div>
+
+
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+    <div class="flipper">
+        <div class="front_1">
+            <img src="image/emoji3.jpg" class="emoji3" style="width: 50%">
+            </div>
+        <div class="back_1">
+           <img src="image/emoji4.png" class="emoji4" style="width: 50%">
+        </div>
+    </div>
+</div>
+
+
+
 
 </body>
 
 <script>
-	var controller = new ScrollMagic.Controller({
-    globalSceneOptions: {
-        triggerHook: "0.05"
-        // duration: "80%" seans k s
-    }
+$(function(){
+    $(".flip1").flip({
+        trigger: 'hover'
+    });
+
+     $(".flip1").flip({
+        trigger: 'hover',
+        axis: 'x'
+    });
 });
 
-	// build scene
-	var scene = new ScrollMagic.Scene({triggerElement: "#RR"})
-					// trigger a velocity opaticy animation
-					.setVelocity("#animate", {opacity: 0}, {duration: 400})
-					.addIndicators() // add indicators (requires plugin)
-					.addTo(controller);
+
 </script>
 </html>
+
+
+
+<script>
+//  var controller = new ScrollMagic.Controller({
+//     globalSceneOptions: {
+//         triggerHook: "0.05"
+//         // duration: "80%" seans k s
+//     }
+// });
+
+//  // build scene
+//  var scene = new ScrollMagic.Scene({triggerElement: "#RR"})
+//                  // trigger a velocity opaticy animation
+//                  .setVelocity(".emoji1", {opacity: 0}, {duration: 400})
+//                  .addIndicators() // add indicators (requires plugin)
+//                  .addTo(controller);
+</script>
