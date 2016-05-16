@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello</title>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+   
+    <link rel="stylesheet" type="text/css" href="hey.css">
+        
+</head>
+<body>
+<div id="animation">
+  <div id="frame"></div>
+  <div id="roll"></div>
+</div>
+
+<ul>
+  <li><label><input id="show" type="checkbox"> show sprite</label></li>
+  <li>
+    <div id="duration">
+      <label id="duration-label" class="isRight">1</label>
+      <input id="duration-input" type="range" min="0.2" value="1" max="4" step="0.1">
+    </div>
+    animation-duration
+  </li>
+</ul>
+</body>
+<script type="text/javascript">
+  if ($.browser.webkit) {
+  // yeah, sorry.. but this demo uses appearance:none which hasn't good support anywhere else.
+  $('html').addClass('WebKit');
+}
+
+$('#show').change( function() {
+  $('#animation').toggleClass('showRoll');
+});
+
+
+var labelSide = "right";
+
+$('#duration-input').change( function() {
+  var val = $(this).val();
+  var valRounded = Math.round( val * 10 ) / 10;
+  var mid = $(this).attr('max')/2;
+  $('#frame').css("animation-duration", val + "s" );
+  $('#roll').css("animation-duration", val + "s" );
+  $('#duration-label').text( valRounded );
+  
+  if(val > mid && labelSide == "right") {
+    labelSide = "left";
+    $('#duration-label').removeClass("isRight").addClass("isLeft");
+    
+  } else if(val <= mid && labelSide == "left") {
+    labelSide = "right";
+    $('#duration-label').removeClass("isLeft").addClass("isRight");
+  }
+});
+</script>
+</html>

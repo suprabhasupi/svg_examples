@@ -282,6 +282,7 @@ img.img5{
 }
 
 
+<<<<<<< HEAD
 
 .flip1 ,.flip2 {
     height: 199px;
@@ -338,4 +339,9 @@ img.img5{
 /* back, initially hidden pane */
 .back_1 {
   transform: rotateY(180deg);
+=======
+.name{
+      position: relative;
+    top: 5em;
+>>>>>>> b3acb4fffb3b2bba725502d6fc0013d19cb6cc44
 }
