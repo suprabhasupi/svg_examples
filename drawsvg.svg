@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>walking guy :P</title>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1150px" height="530px" viewBox="0 0  1150 530" preserveAspectRatio="xMidYMid meet" zoomAndPan="disable" ><rect id="svgEditorBackground" x="0" y="0" width="1150" height="530" style="fill: none; stroke: none;"/><circle id="e1_circle" cx="421" cy="65" stroke="black" style="stroke-width: 1px;" r="33.7796" fill="khaki" /><line id="e2_line" x1="420" y1="98" x2="421" y2="188" stroke="black" style="stroke-width: 1px; fill: none;" /><line id="e3_line" x1="421" y1="188" x2="380" y2="241" stroke="black" style="stroke-width: 1px; fill: none;" /><line id="e4_line" x1="421" y1="187" x2="465" y2="240" stroke="black" style="stroke-width: 1px; fill: none;" /><line id="e5_line" x1="420" y1="144" x2="348" y2="109" stroke="black" style="stroke-width: 1px; fill: none;"/><line id="e6_line" x1="422" y1="143" x2="422" y2="143" stroke="black" style="stroke-width: 1px; fill: none;"/><line id="e7_line" x1="420" y1="143" x2="505" y2="99" stroke="black" style="stroke-width: 1px; fill: none;"/></svg>
+</body>
+</html>
+
