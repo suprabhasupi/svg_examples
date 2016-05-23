@@ -19,51 +19,49 @@
         
         <defs>
 		<style type="text/css">
+
 			@keyframes walking_guy {
-     0% {
-    transform: translateX(0px);
-    transform: translateY(0px);
-  }
-  5% {
-    transform: translateX(5px);
-    transform: translateY(-5px);
-  }
-  10% {
-    transform: translateX(0px);
+    0% {
+    transform:rotate(0deg);
+    /*transform-origin:19px 35px;*/
+     /*995 363*/
   }
   100% {
-    transform: translateX(0px);
+    transform:rotate(360deg);
+    /*transform-origin:10px 15px;*/
+     /*955 506*/
+    
   }
 }
 
 
-            @webkit-keyframes walking_guy {
+  @webkit-keyframes walking_guy {
      0% {
-    transform: translateX(0px);
-  }
-  5% {
-    transform: translateX(4px);
-  }
-  10% {
-    transform: translateX(0px);
+    transform:rotate(0deg);
+    /*transform-origin:19px 35px;*/
+     /*995 363*/
   }
   100% {
-    transform: translateX(0px);
+    transform:rotate(360deg);
+    /*transform-origin:10px 15px;*/
+     /*955 506*/
+    
   }
 }
+
 
 
 /* The element to apply the animation to */
 line#r_leg{
    
     animation-name: walking_guy;
-    animation-duration: 2s;
+    /*-webkit-transform-origin: top left;*/
+    animation-duration: 2s infinite linear;
+     transform-origin: 50% 50%;
+width: 1056px;
+height: 1056px;
 }
-line#l_leg{
-  
-    animation-name: walking_guy;
-    animation-duration: 2s;
-}
+
         </style>
 	</defs>
     </svg>
