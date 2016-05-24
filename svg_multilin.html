@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Line1</title>
+    <script src="js_scrollmagic/jquery.min.js"></script>
+    <script src="js_scrollmagic/ScrollMagic.min.js"></script>
+    <script src="js_scrollmagic/animation.gsap.min.js"></script>
+    <script src="js_scrollmagic/animation.velocity.min.js"></script>
+    <script src="js_scrollmagic/debug.addIndicators.min.js"></script>
+    <script src="js_scrollmagic/jquery.ScrollMagic.min.js"></script>
+    <script src="js_scrollmagic/modernizr.custom.min.js"></script> 
+    <script src="js_scrollmagic/velocity.min.js"></script>
+</head>
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1150px" height="530px" viewBox="0 0  1150 530" preserveAspectRatio="xMidYMid meet" zoomAndPan="disable">
+        <rect id="svgEditorBackground" x="0" y="0" width="1150" height="530" style="fill: none; stroke: none;" />
+        <polyline stroke="black" stroke-width="1" id="e1_polyline" style="fill: none;" points="165 132 222 202 257 128 303 241 350 68 408 290 475 120 515 242 559 128 603 218 602 215 602 214 604 216 601 217" />
+        <polyline stroke="black" stroke-width="1" id="e2_polyline" style="fill: none;" points="165 131 96 319 263 215 287 331 287 333 342 201 403 339 460 200 486 264 485 263 497 296 562 155 594 233" />
+        <line id="e3_line" x1="589" y1="258" x2="685" y2="179" stroke="black" style="stroke-width: 1px; fill: none;" />
+    </svg>
+</body>
+<style type="text/css">
+#e3_line {
+    stroke-dasharray: 1500px;
+    stroke-dashoffset: 1500px;
+    animation: dash 2s linear forwards infinite;
+}
+
+#e1_polyline {
+    stroke-dasharray: 1500px;
+    stroke-dashoffset: 1500px;
+    animation: dash 2s linear forwards infinite;
+}
+
+#e2_polyline {
+    stroke-dasharray: 1500px;
+    stroke-dashoffset: 1500px;
+    animation: dash 2s linear forwards infinite;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+</style>
+    
+    <script>
+    	function pathPrepare this) {
+		var lineLength =this.getTotalLength();
+        alert("Length = "+lineLength)
+            this.css("stroke-dasharray", lineLength);
+		this.css("stroke-dashoffset", lineLength);
+	}
+$(document).ready(function(){
+	var $word = $("path#e1_polyline");
+	var $dot = $("path#e2_polyline");
+        
+        pathPrepare($word);
+	pathPrepare($dot);
+        });
+    </script>
+
+</html>

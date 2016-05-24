@@ -20,46 +20,45 @@
         <defs>
 		<style type="text/css">
 
-			@keyframes walking_guy {
-    0% {
-    transform:rotate(0deg);
-    /*transform-origin:19px 35px;*/
-     /*995 363*/
-  }
-  100% {
-    transform:rotate(360deg);
-    /*transform-origin:10px 15px;*/
-     /*955 506*/
-    
-  }
+			@keyframes walking_guy_front {
+  0% {transform: rotate(30deg);}
+  50%{transform: rotate(-60deg);}
+  100%{transform: rotate(30deg);}
+
+}
+
+@keyframes walking_guy_back {
+  0% {transform: rotate(-10deg);}
+  50%{transform: rotate(90deg);}
+  100%{transform: rotate(-10deg);}
 }
 
 
-  @webkit-keyframes walking_guy {
-     0% {
-    transform:rotate(0deg);
-    /*transform-origin:19px 35px;*/
-     /*995 363*/
-  }
-  100% {
-    transform:rotate(360deg);
-    /*transform-origin:10px 15px;*/
-     /*955 506*/
-    
-  }
+@keyframes moving{
+  0%{transform:translateX(0px);}
+  50%{transform:translateX(600px);}
+  100%{transform:translateX(0px);}
 }
+ 
 
 
 
 /* The element to apply the animation to */
-line#r_leg{
+line#r_leg{ 
    
-    animation-name: walking_guy;
-    /*-webkit-transform-origin: top left;*/
+    
     animation-duration: 2s infinite linear;
-     transform-origin: 50% 50%;
-width: 1056px;
-height: 1056px;
+     /*transform-origin: 50% 50%;*/
+    transform-origin: 100% 0%; 
+    animation: walking_guy_front 2s infinite;
+
+}
+line#l_leg{
+    transform-origin: 0% 0%; 
+    animation: walking_guy_back 2s infinite;
+}
+svg{
+  animation: moving 16s infinite;
 }
 
         </style>
