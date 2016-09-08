@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>svg2(9/16)</title>
+</head>
+<body>
+<style type="text/css">
+	svg {
+  position: fixed;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+}
+
+.straightLine {
+  height: 3000px;
+  position: relative;
+  width: 360px;    
+  margin: 40vh auto 0 auto;
+
+}
+</style>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<main role="article" title="line">
+<div class="straightLine">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+
+     viewBox="0 0 1280 1000" style="enable-background:new 0 0 1280 800;" xml:space="preserve">
+
+<style type="text/css">
+
+    .st0{fill:none;stroke:#000000;stroke-width:8;stroke-miterlimit:10;}
+
+</style>
+  <g class="all">
+
+    <path id="line1" class="st0" d="M54,178h509.6c49.9,0,90.4,40.5,90.4,90.4V428"/>
+
+    <rect id="rect1" x="498" y="428" class="st0" width="308" height="162"/>
+
+    <line id="line2" x1="652" y1="590" x2="652" y2="790" class="st0"/>
+
+    <circle id="circ1" cx="652" cy="890" r="100" class="st0"/>
+
+  </g>
+</svg>
+
+</div>
+</main>
+
+<script type="text/javascript">
+	var scrollBehaviour = [
+     {id: 'line1', startPct: 0, endPct: 30},
+     {id: 'rect1', startPct: 30, endPct: 60},
+     {id: 'line2', startPct: 60, endPct: 80},
+     {id: 'circ1', startPct: 80, endPct: 100}
+  ];
+
+$(document).ready(function() {
+
+  // On a scroll event - execute function
+  $(window).scroll(scrollEventHandler);
+
+  // Call the scroll event handler once at the start to initialise the dash offsets
+  scrollEventHandler();
+
+});
+
+
+
+function scrollEventHandler()
+{
+  // Calculate how far down the page the user is 
+  var percentOfScroll = (($(window).scrollTop() / ($("html").height() - $(window).height())) * 100);
+
+  // For each lement that is getting drawn...
+  for (var i=0; i<scrollBehaviour.length; i++)
+  {
+    var data = scrollBehaviour[i];
+    var elem = document.getElementById(data.id);
+
+    // Get the length of this elements path
+    var dashLen = calcPathLength(elem);
+
+    // Calculate where the current scroll position falls relative to our path
+    var fractionThroughThisElem = (percentOfScroll - data.startPct) / (data.endPct - data.startPct);
+    // Clamp the fraction value to within this path (0 .. 1)
+    fractionThroughThisElem = Math.max(fractionThroughThisElem, 0);
+    fractionThroughThisElem = Math.min(fractionThroughThisElem, 1);
+
+    var dashOffset = dashLen * (1 - fractionThroughThisElem);
+
+    elem.setAttribute("stroke-dasharray", dashLen);
+    elem.setAttribute("stroke-dashoffset", dashOffset);
+  }
+}
+
+
+
+function calcPathLength(elem)
+{
+  if (elem.getTotalLength)
+  {
+    // It's a path
+    return elem.getTotalLength();
+  }
+  else if (elem.tagName === "rect")
+  {
+    // Handle rect elements: perimeter length = w + w + h + h
+    return (elem.width.baseVal.value + elem.height.baseVal.value) * 2;
+  }
+  else if (elem.tagName === "circle")
+  {
+    // Handle circle elements: perimeter length = 2 * r * PI
+    return elem.r.baseVal.value * 2 * Math.PI;
+  }
+  else if (elem.tagName === "line")
+  {
+    // Handle line elements: use pythagoras' theorem
+    var dx = elem.x2.baseVal.value - elem.x1.baseVal.value;
+    var dy = elem.y2.baseVal.value - elem.y1.baseVal.value;
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+  // If you use other elem types, you will have to add support for them here.
+}
+
+</script>
+</body>
+</html>
