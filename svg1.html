@@ -38,16 +38,16 @@ body {
 <script type="text/javascript">
     $(window).on('scroll', function(){
 
-        // console.log("yaayayay working ",$(window).scrollTop());
+        console.log("yaayayay working ",$(window).scrollTop());
         if($(window).scrollTop()==1600 && $(window).scrollLeft()<3600){
-            console.log("INSIDE iF");
+            // console.log("INSIDE iF");
              $("html, body, *").mousewheel(function(event, delta) {
         this.scrollLeft -= (delta * 50);
         event.preventDefault();
     });
         }
         else{
-            console.log("INSIDE ElSe");
+            // console.log("INSIDE ElSe");
               $("html, body, *").unbind('mousewheel');
         }
     })
